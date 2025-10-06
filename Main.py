@@ -1,13 +1,12 @@
-# app.py
 # One simple menu to run either Part 1 (Mortgage) or Part 2 (Exchange Rates)
 
-from mortgage import MortgagePayment
+from MortgagePayment import MortgagePayment
 from exchange_rates import ExchangeRates
 
 CSV_DEFAULT = "BankOfCanadaExchangeRates.csv"
 
 def run_mortgage():
-    print("\n=== Part 1: Mortgage Payments ===")
+    print("\n 1. Mortgage Payments")
     principal = float(input("Enter the mortgage principal ($): "))
     rate = float(input("Enter the quoted annual rate (%): "))
     years = int(input("Enter the amortization period (years): "))
@@ -25,10 +24,9 @@ def run_mortgage():
     print()
 
 def run_exchange():
-    print("\n=== Part 2: Exchange Rate Conversion (CAD ↔ USD) ===")
-    fname = input(f"CSV filename [{CSV_DEFAULT}]: ").strip() or CSV_DEFAULT
+    print("\n 2. Exchange Rate Conversion")
+    xr = ExchangeRates("BankOfCanadaExchangeRates.csv")
 
-    xr = ExchangeRates(fname)
     amount = float(input("Enter amount: "))
     from_c = input("From currency (CAD/USD): ")
     to_c = input("To currency (CAD/USD): ")
