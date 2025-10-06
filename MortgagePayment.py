@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     mortgage = MortgagePayment(rate, years)
     monthly, semi_monthly, bi_weekly, weekly, rapid_biweekly, rapid_weekly = mortgage.payments(principal)
-    
+
 def run_mortgage():
     print("\nMortgage payment options:")
     print(f"Monthly Payment: ${monthly}")

@@ -25,13 +25,3 @@ class ExchangeRates:
             return round(amount * self.rate_usd_cad, 2)
         else:  # CAD -> USD
             return round(amount / self.rate_usd_cad, 2)
-
-        
-if __name__ == "__main__":
-    filename = "BankOfCanadaExchangeRates.csv"
-    exchanger = ExchangeRates(filename)
-    amount = float(input("Enter amount: "))
-    from_currency = input("From currency (CAD/USD): ")
-    to_currency = input("To currency (CAD/USD): ")
-    result = exchanger.convert(amount, from_currency, to_currency)
-    print(f"\nConverted amount: {result} {to_currency.upper()}")
